@@ -52,7 +52,6 @@ img {
     cursor: pointer;
     transition: all 0.5s ease;
     background: center/cover no-repeat;
-    background: red;
     position: relative;
     flex: 1;
 
@@ -67,19 +66,19 @@ img {
     }
 
     &:nth-child(1) {
-        background-image: url("");
+        background-image: url("../public/1.avif");
     }
 
     &:nth-child(2) {
-        background-image: url("");
+        background-image: url("../public/2.avif");
     }
 
     &:nth-child(3) {
-        background-image: url("");
+        background-image: url("../public/3.avif");
     }
 
     &:nth-child(4) {
-        background-image: url("");
+        background-image: url("../public/4.avif");
     }
 
     &.box-active {
