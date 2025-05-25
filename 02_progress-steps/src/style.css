@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --bg-clr: oklch(0.14 0 0);
+    --white-clr: oklch(1 0 0);
+    --primary-clr: oklch(0.61 0.25 292.72);
+    --primary-clr-200: oklch(0.49 0.27 292.58);
+    --gray-clr: oklch(0.67 0 0);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+    width: 100%;
+    background: var(--bg-clr);
+    color: var(--white-clr);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .progress-container,
+    .progress-action-btns {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .progress-container {
+        gap: 3rem;
+        position: relative;
+
+        .circle {
+            --circle-size: 2.5rem;
+            height: var(--circle-size);
+            width: var(--circle-size);
+            color: var(--bg-clr);
+            background: var(--white-clr);
+            display: grid;
+            place-items: center;
+            border-radius: 100%;
+            border: 3.5px solid var(--gray-clr);
+            transition: all 0.5s ease;
+
+            &.active {
+                border-color: var(--primary-clr);
+            }
+        }
+
+        &::before,
+        .progress {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 3px;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        .progress {
+            background: var(--primary-clr);
+            transition: all 0.5s ease;
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            background: var(--gray-clr);
+        }
+    }
+
+    .progress-action-btns {
+        gap: 1rem;
+    }
+
+    .btn {
+        padding-inline: 0.75rem;
+        block-size: 2rem;
+        background: var(--primary-clr);
+        display: grid;
+        place-items: center;
+        font-size: 0.875rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        color: var(--white-clr);
+
+        &:hover,
+        &:active {
+            background: var(--primary-clr-200);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+}
